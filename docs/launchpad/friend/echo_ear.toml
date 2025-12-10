@@ -2,9 +2,9 @@ esp_toml_version = 1.0
 
 multipart = true
 chip = "esp32-s3"
-supported_apps = [ "M5Stack-CoreS3-AI-Voice-Agent" ]
+supported_apps = [ "ESP Agents Firmware: EchoEar" ]
 
-[M5Stack-CoreS3-AI-Voice-Agent]
+["ESP Agents Firmware: EchoEar"]
 icon = "https://github.com/espressif/esp-agents-firmware/wiki/images/EchoEarListening.jpeg"
 image.esp32-s3.parts = [
   "https://esp-agents-firmware-prebuilt.s3.ap-northeast-1.amazonaws.com/friend/echo_ear/bootloader.bin",
