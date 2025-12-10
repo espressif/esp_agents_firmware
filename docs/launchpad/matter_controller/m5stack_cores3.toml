@@ -2,9 +2,10 @@ esp_toml_version = 1.0
 
 multipart = true
 chip = "esp32-s3"
-supported_apps = [ "M5Stack-CoreS3-AI-Matter-Controller" ]
+supported_apps = [ "ESP Agents Firmware: M5Stack CoreS3 Matter Controller" ]
 
-[M5Stack-CoreS3-AI-Matter-Controller]
+["ESP Agents Firmware: M5Stack CoreS3 Matter Controller"]
+icon = "https://github.com/espressif/esp-agents-firmware/wiki/images/M5StackCoreS3Listening.png"
 image.esp32-s3.parts = [
   "https://esp-agents-firmware-prebuilt.s3.ap-northeast-1.amazonaws.com/matter_controller/m5stack_cores3/bootloader.bin",
   "https://esp-agents-firmware-prebuilt.s3.ap-northeast-1.amazonaws.com/matter_controller/m5stack_cores3/partition-table.bin",
