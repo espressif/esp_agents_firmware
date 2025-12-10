@@ -61,7 +61,7 @@ The firmware is equipped with a default agent. The default agent can be replaced
 
 ### Matter Controller + Thread Border Router Firmware
 
-This firmware supports Matter Controller functionality and Thread Border Router functionality, apart from the common Agents functionality that is described above. It supports tools like get_device_list, set_voleume, set_emotion. You may refer [this](docs/firmwares/matter_controller.md) for more details.
+This firmware supports Matter Controller functionality and Thread Border Router functionality, apart from the common Agents functionality that is described above. It supports tools like get_device_list, set_volume, set_emotion. You may refer [this](docs/firmwares/matter_controller.md) for more details.
 
 The firmware is equipped with a default agent. The default agent can be replaced by your own custom agent created through the ESP Private Agents Platform.
 

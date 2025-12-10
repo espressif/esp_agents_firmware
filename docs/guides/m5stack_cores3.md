@@ -14,7 +14,7 @@ The fastest way to get started is to get the ESP RainMaker Home app from the res
 
 ## Configuring the Device
 
-The device is initially in unconfigured mode. You will set it up to connect to your home's Wi-Fi network, so you can begin using the device.
+The device is initially in unconfigured mode. You will need to set it up to connect to your home's Wi-Fi network, so you can begin using the device.
 
 * Once you have installed and launched the app, the app will ask for Bluetooth/Location permission. This is necessary for the app to detect the unconfigured device's advertisement data.
 
