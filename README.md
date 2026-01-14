@@ -51,12 +51,10 @@ Flash the examples using ESP Launchpad from the links below and then refer the [
       EchoEar
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/friend/echo_ear.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/voice_chat/echoear_core_board_v1_2/launchpad.toml" target="_blank">Flash Now</a>
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/matter_controller/echo_ear.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/matter_controller/echoear_core_board_v1_2/launchpad.toml" target="_blank">Flash Now</a>
     </td>
   </tr>
   <tr>
@@ -65,12 +63,10 @@ Flash the examples using ESP Launchpad from the links below and then refer the [
       ESP-BOX-3
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/friend/esp_box_3.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/voice_chat/esp_box_3/launchpad.toml" target="_blank">Flash Now</a>
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/matter_controller/esp_box_3.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/matter_controller/esp_box_3/launchpad.toml" target="_blank">Flash Now</a>
     </td>
   </tr>
   <tr>
@@ -79,12 +75,10 @@ Flash the examples using ESP Launchpad from the links below and then refer the [
       M5Stack CoreS3
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/friend/m5stack_cores3.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/voice_chat/m5stack_cores3/launchpad.toml" target="_blank">Flash Now</a>
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/matter_controller/m5stack_cores3.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/matter_controller/m5stack_cores3/launchpad.toml" target="_blank">Flash Now</a>
     </td>
   </tr>
   <tr>
@@ -93,12 +87,10 @@ Flash the examples using ESP Launchpad from the links below and then refer the [
       M5Stack CoreS3 + M5Stack Module Gateway H2
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/friend/m5stack_cores3_h2_gateway.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/voice_chat/m5stack_cores3_h2_gateway/launchpad.toml" target="_blank">Flash Now</a>
     </td>
     <td align="center">
-      <!-- <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://raw.githubusercontent.com/espressif/esp-agents-firmware/refs/heads/main/docs/launchpad/matter_controller/m5stack_cores3_h2_gateway.toml" target="_blank">Flash Now</a> -->
-      Firmware Build In Progress
+      <a href="https://espressif.github.io/esp-launchpad/minimal-launchpad/?flashConfigURL=https://espressif.github.io/esp-agents-firmware/matter_controller/m5stack_cores3_h2_gateway/launchpad.toml" target="_blank">Flash Now</a>
     </td>
   </tr>
 </table>
