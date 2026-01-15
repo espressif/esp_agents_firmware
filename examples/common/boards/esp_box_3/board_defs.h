@@ -13,4 +13,4 @@
 #define LEDC_BACKLIGHT_SUPPORTED 1
 
 /* The URL of the guide for this board */
-#define BOARD_DEVICE_MANUAL_URL "https://raw.githubusercontent.com/espressif/esp_agents_firmware/refs/heads/main/components/boards/esp_box_3/README.md"
+#define BOARD_DEVICE_MANUAL_URL "https://raw.githubusercontent.com/espressif/esp_agents_firmware/refs/heads/main/examples/common/boards/esp_box_3/README.md"

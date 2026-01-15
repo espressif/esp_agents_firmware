@@ -20,4 +20,4 @@
 #define LEDC_BACKLIGHT_SUPPORTED 1
 
 /* The URL of the guide for this board */
-#define BOARD_DEVICE_MANUAL_URL "https://raw.githubusercontent.com/espressif/esp_agents_firmware/refs/heads/main/components/boards/echoear_core_board_v1_2/README.md"
+#define BOARD_DEVICE_MANUAL_URL "https://raw.githubusercontent.com/espressif/esp_agents_firmware/refs/heads/main/examples/common/boards/echoear_core_board_v1_2/README.md"
