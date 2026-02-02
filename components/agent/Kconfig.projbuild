@@ -1,0 +1,9 @@
+menu "ESP Agent Config"
+
+    config ESP_AGENT_API_ENDPOINT
+        string "ESP Private Agents API Endpoint"
+        default "api.agents.espressif.com"
+        help
+            This is the API Endpoint for ESP Private Agents Deployment.
+
+endmenu

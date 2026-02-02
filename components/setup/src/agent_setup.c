@@ -349,7 +349,7 @@ esp_err_t agent_setup_start(void)
         ESP_LOGE(TAG, "Agent setup not initialized");
         return ESP_ERR_INVALID_STATE;
     }
-    return app_network_start(POP_TYPE_RANDOM);
+    return app_network_start(POP_TYPE_MAC);
 }
 
 esp_err_t agent_setup_factory_reset(void)

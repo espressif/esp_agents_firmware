@@ -20,6 +20,7 @@
 #include <esp_websocket_client.h>
 
 #include <esp_agent.h>
+#include <esp_agent_core.h>
 #include <esp_agent_internal.h>
 #include <esp_agent_websocket.h>
 #include <esp_agent_internal_messages.h>
@@ -140,12 +141,17 @@ static esp_err_t build_ws_uri(const char *agent_id, const char *access_token, ch
         return ESP_ERR_INVALID_ARG;
     }
 
-    size_t buf_len = strlen(ESP_AGENT_SERVER_URL) + strlen("/user/agents/") + strlen(agent_id) + strlen("/ws") + strlen("?token=") + strlen(access_token) + 1;
+    const char *api_url = esp_agents_get_api_endpoint();
+
+    const char *scheme = ESP_AGENT_API_USE_TLS ? "wss" : "ws";
+    size_t scheme_len = strlen(scheme) + 3; /*  for "://" */
+
+    size_t buf_len = scheme_len + strlen(api_url) + strlen("/user/agents/") + strlen(agent_id) + strlen("/ws") + strlen("?token=") + strlen(access_token) + 1;
     char *buf = malloc(buf_len);
     if (buf == NULL) {
         return ESP_ERR_NO_MEM;
     }
-    snprintf(buf, buf_len, "%s/user/agents/%s/ws?token=%s", ESP_AGENT_SERVER_URL, agent_id, access_token);
+    snprintf(buf, buf_len, "%s://%s/user/agents/%s/ws?token=%s", scheme, api_url, agent_id, access_token);
     *uri_out = buf;
     *uri_len = buf_len;
     return ESP_OK;

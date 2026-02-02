@@ -1,9 +1,0 @@
-menu "ESP Agent Config"
-
-    config ESP_AGENT_SERVER_URL
-        string "ESP Private Agents Server URL"
-        default "wss://api.agents.espressif.com"
-        help
-            This is the Websocket URL for ESP Private Agents Server.
-
-endmenu

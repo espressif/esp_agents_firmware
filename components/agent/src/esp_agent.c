@@ -374,3 +374,18 @@ esp_err_t esp_agent_set_refresh_token(esp_agent_handle_t handle, const char *ref
     ESP_LOGI(TAG, "Set refresh_token");
     return ESP_OK;
 }
+
+char *esp_agents_get_api_endpoint(void)
+{
+    if (!ESP_AGENT_API_ENDPOINT) {
+        return NULL;
+    }
+
+    char *schema_end_index = strstr(ESP_AGENT_API_ENDPOINT, "://");
+
+    if (schema_end_index) {
+        return schema_end_index + 3; // +3 for "://"
+    }
+
+    return ESP_AGENT_API_ENDPOINT;
+}

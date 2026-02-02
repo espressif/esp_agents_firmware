@@ -1,0 +1,4 @@
+# sdkconfig replacement configurations for deprecated options formatted as
+# CONFIG_DEPRECATED_OPTION CONFIG_NEW_OPTION
+
+CONFIG_ESP_AGENT_SERVER_URL CONFIG_ESP_AGENT_API_ENDPOINT

@@ -9,7 +9,7 @@
 #include <freertos/FreeRTOS.h>
 #include <esp_err.h>
 
-#define ESP_AGENT_SERVER_URL CONFIG_ESP_AGENT_SERVER_URL
+#define ESP_AGENT_API_ENDPOINT CONFIG_ESP_AGENT_API_ENDPOINT
 
 #ifdef __cplusplus
 extern "C" {
