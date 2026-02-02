@@ -8,8 +8,11 @@
 #include <nvs_flash.h>
 #include <string.h>
 
+#include <esp_wifi.h>
 #include <esp_netif.h>
 #include <app_network.h>
+
+#include <agent_console.h>
 
 #include "agent_setup.h"
 #include "setup/rainmaker.h"
@@ -65,6 +68,67 @@ static void event_handler(void *arg, esp_event_base_t event_base, int32_t event_
     ESP_LOGD(TAG, "Network Connected");
     g_agent_setup_data.flags.network_connected = true;
     esp_event_post(AGENT_SETUP_EVENT, AGENT_SETUP_EVENT_NETWORK_CONNECTED, NULL, 0, portMAX_DELAY);
+}
+
+static int set_wifi_cli_handler(int argc, char *argv[])
+{
+    if (argc != 3) {
+        ESP_LOGE(TAG, "Incorrect arguments\nUsage: set-wifi <ssid> <password>");
+        return 0;
+    }
+
+    /**
+     * Initialize WiFi with default config
+     * This is ignored internally if already inited
+     */
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    if (esp_wifi_init(&cfg) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to init WiFi");
+        return 0;
+    }
+
+    /* Stop WiFi */
+    if (esp_wifi_stop() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to stop wifi");
+    }
+
+    /* Configure WiFi as station */
+    if (esp_wifi_set_mode(WIFI_MODE_STA) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set WiFi mode");
+        return 0;
+    }
+
+    wifi_config_t wifi_cfg = {0};
+    snprintf((char*)wifi_cfg.sta.ssid, sizeof(wifi_cfg.sta.ssid), "%s", argv[1]);
+    snprintf((char*)wifi_cfg.sta.password, sizeof(wifi_cfg.sta.password), "%s", argv[2]);
+
+    /* Configure WiFi station with provided host credentials */
+    if (esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_cfg) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set WiFi configuration");
+        return 0;
+    }
+    /* (Re)Start WiFi */
+    if (esp_wifi_start() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to start WiFi");
+        return 0;
+    }
+    /* Connect to AP */
+    if (esp_wifi_connect() != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to connect WiFi");
+        return 0;
+    }
+
+    return 0;
+}
+
+esp_err_t register_set_wifi_cli_handler(void)
+{
+    esp_console_cmd_t cmd = {
+        .command = "set-wifi",
+        .help = "Set WiFi credentials\nUsage: set-wifi <ssid> <password>",
+        .func = set_wifi_cli_handler,
+    };
+    return agent_console_register_command(&cmd);
 }
 
 static esp_err_t save_str_to_nvs(const char *key, const char *value)
@@ -168,6 +232,8 @@ esp_err_t agent_setup_init()
 
     /** TODO: Change this */
     xTaskCreate(start_task, "start_task", 4*1024, NULL, 5, NULL);
+
+    ESP_RETURN_ON_ERROR(register_set_wifi_cli_handler(), TAG, "Failed to register set-wifi CLI handler");
 
     g_agent_setup_data.init_done = true;
 
