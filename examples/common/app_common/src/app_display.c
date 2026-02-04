@@ -15,7 +15,7 @@
 #include <network_provisioning/manager.h>
 
 #include <esp_board_device.h>
-#include <dev_display_lcd_spi.h>
+#include <dev_display_lcd.h>
 #include <dev_lcd_touch_i2c.h>
 
 #include "app_display.h"
@@ -301,10 +301,10 @@ static esp_err_t init_display(void)
 
     ESP_LOGI(TAG, "Initializing display\n");
 
-    dev_display_lcd_spi_handles_t *display_handle;
+    dev_display_lcd_handles_t *display_handle;
     ESP_RETURN_ON_ERROR(esp_board_device_get_handle("display_lcd", (void **)&display_handle), TAG,
                         "Failed to get display handle\n");
-    dev_display_lcd_spi_config_t *display_config;
+    dev_display_lcd_config_t *display_config;
     ESP_RETURN_ON_ERROR(esp_board_device_get_config("display_lcd", (void **)&display_config), TAG,
                         "Failed to get display config\n");
 
@@ -313,9 +313,9 @@ static esp_err_t init_display(void)
                         "Failed to get touch handle\n");
     esp_lcd_touch_handle_t touch_handle = ((dev_lcd_touch_i2c_handles_t *)dev_touch_handle)->touch_handle;
 
-    uint8_t *buffer = heap_caps_calloc(display_config->x_max * display_config->y_max * 2, sizeof(uint8_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+    uint8_t *buffer = heap_caps_calloc(display_config->lcd_width * display_config->lcd_height * 2, sizeof(uint8_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
     if (buffer) {
-        esp_lcd_panel_draw_bitmap(display_handle->panel_handle, 0, 0, display_config->x_max, display_config->y_max, buffer);
+        esp_lcd_panel_draw_bitmap(display_handle->panel_handle, 0, 0, display_config->lcd_width, display_config->lcd_height, buffer);
         heap_caps_free(buffer);
         vTaskDelay(pdMS_TO_TICKS(50));
     }
@@ -335,8 +335,8 @@ static esp_err_t init_display(void)
     s_display_data.panel_handle = display_handle->panel_handle;
     s_display_data.io_handle = display_handle->io_handle;
     s_display_data.touch_handle = touch_handle;
-    s_display_data.h_res = display_config->x_max;
-    s_display_data.v_res = display_config->y_max;
+    s_display_data.h_res = display_config->lcd_width;
+    s_display_data.v_res = display_config->lcd_height;
 
     app_touch_press_init();
 

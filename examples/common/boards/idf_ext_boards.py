@@ -252,10 +252,8 @@ def action_extensions(base_actions: dict, project_path: str) -> dict:
         # Save the board path file again because the folder contents are deleted by bmgr script.
         _write_board_name_file(board_name, agent_board_name_file)
 
-        click.secho("Backing up sdkconfig to sdkconfig.backup", fg="yellow")
-        shutil.move(project_dir / "sdkconfig", project_dir / "sdkconfig.backup")
-
         click.secho(f"Successfully selected board: {board_name}", fg="green")
+
 
     # Get available boards for autocomplete
     available_boards = [board_name for board_name, _, _ in _list_available_boards(BOARDS_DIR)]
